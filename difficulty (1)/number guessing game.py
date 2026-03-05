@@ -8,47 +8,55 @@ def main():
     print("2.1 decimal place")
     print("3.2 decimal places")
     print("4.Exit")
-    choice=int(input("Enter your choice "))
+    choice=input("Enter your choice ")
 
-    if choice==1:
-        num1=random.randint(1,100)
-        num2=int(input("Enter a number from 1-100 "))
-        while num1!=num2:
-            if num1>num2:
-                print("Too low. Try again")
-            else:
-                print("Too high. Try again")
+    try:
+        if int(choice)==1:
+            num1=random.randint(1,100)
             num2=int(input("Enter a number from 1-100 "))
-        print("You're correct.")
-        main()
-    
-    if choice==2:
-        num1=round(random.uniform(1,100),1)
-        num2=float(input("Enter a number from 1-100 "))
-        while num1!=num2:
-            if num1>num2:
-                print("Too low. Try again")
-            else:
-                print("Too high. Try again")
+            while num1!=num2:
+                if num1>num2:
+                    print("Too low. Try again")
+                else:
+                    print("Too high. Try again")
+                num2=int(input("Enter a number from 1-100 "))
+            print("You're correct.")
+            main()
+        elif int(choice)==2:
+            num1=round(random.uniform(1,100),1)
             num2=float(input("Enter a number from 1-100 "))
-        print("You're correct.")
-        main()
+            while num1!=num2:
+                if num1>num2:
+                    print("Too low. Try again")
+                else:
+                    print("Too high. Try again")
+                num2=float(input("Enter a number from 1-100 "))
+            print("You're correct.")
+            main()
     
-    if choice==3:
-        num1=round(random.uniform(1,100),2)
-        num2=float(input("Enter a number from 1-100 "))
-        while num1!=num2:
-            if num1>num2:
-                print("Too low. Try again")
-            else:
-                print("Too high. Try again")
+        elif int(choice)==3:                
+            num1=round(random.uniform(1,100),2)
             num2=float(input("Enter a number from 1-100 "))
-        print("You're correct.")
-        main()
+            while num1!=num2:
+                if num1>num2:
+                    print("Too low. Try again")
+                else:
+                    print("Too high. Try again")
+                num2=float(input("Enter a number from 1-100 "))
+            print("You're correct.")
+            main()
+        
+        elif int(choice)==4:
+            while True:
+                break
+        
+        else:
+            print("Try again")
+            main()
     
-    if choice==4:
-        while True:
-            break
+    except ValueError:
+        print("Try again")
+        main()
 
 main()
 
