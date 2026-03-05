@@ -12,7 +12,7 @@ while user!="q":
     else:
         print("Try again")
     computer=random.choice(list)
-    user=input("Choose rock, paper or scissors ")
+    user=input("Choose rock, paper or scissors (press q to exit) ")
 
 if user=="q":
     while True:
